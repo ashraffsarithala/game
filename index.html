@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <title>HexStacks.io</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="root">
+      <canvas id="game" aria-label="HexStacks.io game canvas"></canvas>
+
+      <div id="overlay" class="overlay" aria-live="polite">
+        <div class="card">
+          <h1 class="title">HexStacks</h1>
+          <p class="subtitle">Rotate the hex to match colors. Clear 3+ in a row.</p>
+          <div class="controls">
+            <div><span class="kbd">←</span> rotate left</div>
+            <div><span class="kbd">→</span> rotate right</div>
+            <div><span class="kbd">tap</span> left/right half on mobile</div>
+          </div>
+          <button id="btnStart" class="btn primary">Start</button>
+          <button id="btnRestart" class="btn" hidden>Restart</button>
+          <div class="stats">
+            <div id="finalScoreRow" hidden><span class="label">Your score</span> <span id="finalScore">0</span></div>
+            <div><span class="label">High score</span> <span id="highScore">0</span></div>
+          </div>
+          <p class="hint">Tip: Don’t let any stack reach the center.</p>
+        </div>
+      </div>
+
+      <div class="hud" aria-hidden="true">
+        <div class="hudBox">
+          <div class="hudLabel">Score</div>
+          <div id="score" class="hudValue">0</div>
+        </div>
+        <div class="hudBox">
+          <div class="hudLabel">Combo</div>
+          <div id="combo" class="hudValue">1×</div>
+        </div>
+        <div class="hudBox">
+          <div class="hudLabel">Speed</div>
+          <div id="speed" class="hudValue">1.00×</div>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
